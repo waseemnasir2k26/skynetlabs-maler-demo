@@ -295,7 +295,16 @@
     const nameEl = $(".vs-color-name", root);
     let current = null;
 
-    $$(".vs-swatch", root).forEach((sw) =>
+    $$(".vs-swatch", root).forEach((sw) => {
+      sw.setAttribute("role", "button");
+      sw.setAttribute("aria-label", "Farbton " + sw.dataset.name);
+      sw.tabIndex = 0;
+      sw.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          sw.click();
+        }
+      });
       sw.addEventListener("click", () => {
         $$(".vs-swatch", root).forEach((s) => s.classList.remove("sel"));
         sw.classList.add("sel");
@@ -304,8 +313,8 @@
         if (wallSide) wallSide.style.fill = shade(current, 0.82);
         if (nameEl) nameEl.textContent = sw.dataset.name;
         brush.color = current;
-      }),
-    );
+      });
+    });
 
     // Vorher hold-button (SVG mode)
     const holdBtn = $(".vs-before", root);
@@ -444,7 +453,9 @@
   /* ---------- smooth anchor scroll ---------- */
   $$('a[href^="#"]').forEach((a) =>
     a.addEventListener("click", (e) => {
-      const t = $(a.getAttribute("href"));
+      const h = a.getAttribute("href");
+      if (!h || h.length < 2) return;
+      const t = $(h);
       if (t) {
         e.preventDefault();
         t.scrollIntoView({ behavior: "smooth" });
