@@ -8,7 +8,7 @@ Live demo: https://skynetlabs-maler-demo.vercel.app
 
 Everything in it actually works — try it:
 
-- AI quote form: 3 questions, then an instant CHF price range for room, apartment or facade painting (built on real Swiss market rates), with one-tap WhatsApp handoff that sends Patricio the full project summary
+- Smart quote form: 3 questions, then an instant CHF price range for room, apartment or facade painting (built on real Swiss market rates), with one-tap WhatsApp handoff that sends Patricio the full project summary
 - AI Vision Studio: clients pick a color and see the room repainted instantly — or upload a photo of their own wall and paint it in the browser. Photos never leave their device
 - 3 complete design directions — use the V1/V2/V3 switcher top right (V2 dark premium, V1 Swiss editorial, V3 warm minimal). You pick one, I polish it
 - Your real data already in: 5.0 Google rating (34 reviews), SMGV, services, region, phone/WhatsApp, German Sie-form copy, FAQ with real CHF prices, local SEO schema for Google
